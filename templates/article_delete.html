@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <form method="post" class="site-form has-background-light" style="margin-top: 200px">
+       {% csrf_token %}
+       <p class="content has-text-centered is-size-4 mb-4">Are you sure to delete post "{{ article }}"?</p>
+       <div class="has-text-centered my-4">
+        <button class="button is-success" type="submit">O'chirish</button>
+        <a href="{% url 'article_detail' article.slug %}" class="button is-danger ">
+            Ortga Qaytish
+        </a>
+    </div>
+   </form>
+{% endblock %}
